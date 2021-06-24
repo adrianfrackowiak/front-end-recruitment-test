@@ -590,7 +590,7 @@
                             </div>
                             <form>
                                 <div class="form-row">
-                                    <div class="form-input-row">
+                                    <div class="form-input-row firstname">
                                         <label for="firstname"
                                             >First Name</label
                                         >
@@ -602,7 +602,7 @@
                                         />
                                     </div>
 
-                                    <div class="form-input-row">
+                                    <div class="form-input-row lastname">
                                         <label for="lastname">Last Name</label>
                                         <input
                                             type="text"
@@ -612,7 +612,7 @@
                                         />
                                     </div>
                                 </div>
-                                <div class="form-input">
+                                <div class="form-input email">
                                     <label for="email">Email</label>
                                     <input
                                         type="email"
@@ -623,7 +623,7 @@
                                 </div>
 
                                 <div class="form-row">
-                                    <div class="form-input-row">
+                                    <div class="form-input-row country">
                                         <label for="country">Country</label>
                                         <select name="country" id="country">
                                             <option value="United States">
@@ -632,24 +632,26 @@
                                         </select>
                                     </div>
 
-                                    <div class="form-input-row">
+                                    <div class="form-input-row postalcode">
                                         <label for="postalcode"
                                             >Postal Code</label
                                         >
                                         <input
-                                            type="number"
+                                            type="text"
                                             name="postalcode"
                                             id="postalcode"
+                                            maxlength="5"
                                             placeholder="10001"
                                         />
                                     </div>
                                 </div>
-                                <div class="form-input">
+                                <div class="form-input phone">
                                     <label for="phone">Phone Number</label>
                                     <input
                                         type="text"
                                         name="phone"
                                         id="phone"
+                                        maxlength="13"
                                         placeholder="(212) 692-93-92"
                                     />
                                 </div>
@@ -665,7 +667,7 @@
                                 </h3>
                             </div>
                             <form>
-                                <div class="form-input">
+                                <div class="form-input creditcard">
                                     <label for="creditcard"
                                         >Credit Card Number</label
                                     >
@@ -673,6 +675,7 @@
                                         type="text"
                                         name="creditcard"
                                         id="creditcard"
+                                        maxlength="25"
                                         placeholder="0000 - 0000 - 0000 - 0000"
                                     />
                                     <div class="card-img">
@@ -684,7 +687,7 @@
                                 </div>
 
                                 <div class="form-row">
-                                    <div class="form-input-row">
+                                    <div class="form-input-row securitycode">
                                         <label for="securitycode"
                                             >Security Code</label
                                         >
@@ -692,13 +695,14 @@
                                             type="password"
                                             name="securitycode"
                                             id="securitycode"
+                                            maxlength="3"
                                             placeholder="***"
                                         />
 
                                         <span class="code-info">?</span>
                                     </div>
 
-                                    <div class="form-input-row">
+                                    <div class="form-input-row date">
                                         <label for="date"
                                             >Expiration Date</label
                                         >
@@ -706,17 +710,20 @@
                                             type="text"
                                             name="date"
                                             id="date"
+                                            maxlength="7"
                                             placeholder="MM / YY"
                                         />
                                     </div>
                                 </div>
                             </form>
 
-                            <button type="button">
+                            <button class="checkout-btn">
                                 <span class="material-icons md-dark"
                                     >shopping_cart</span
                                 >Complete Purchase
                             </button>
+
+                            <div class="validation-info"></div>
                         </div>
 
                         <div class="checkout-order">
@@ -831,6 +838,7 @@
         <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
         <!-- build:js scripts/main.min.js -->
         <script src="scripts/main.js"></script>
+        <script src="scripts/validation.js"></script>
         <!-- endbuild -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

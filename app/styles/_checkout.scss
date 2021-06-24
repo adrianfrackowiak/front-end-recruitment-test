@@ -1,3 +1,15 @@
+$breakpoint: (
+    'm': '1024px',
+    'l': '1200px',
+    'xl': '1600px',
+);
+
+@mixin breakpoint($size) {
+    @media (max-width: map-get($breakpoint, $size)) {
+        @content;
+    }
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -158,6 +170,14 @@ input[type='number'] {
 
                 cursor: pointer;
             }
+
+            .error {
+                border: 2px solid rgb(214, 84, 84);
+            }
+
+            .pass {
+                border: 2px solid rgb(84, 214, 91);
+            }
         }
 
         button {
@@ -186,6 +206,15 @@ input[type='number'] {
                 font-size: 1.25rem;
                 margin: 0 1rem 0 0;
             }
+        }
+
+        .validation-info {
+            width: 100%;
+            margin: 2rem 0 0 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 
@@ -232,6 +261,27 @@ input[type='number'] {
                     font-size: 2rem;
                 }
             }
+        }
+    }
+
+    @include breakpoint(xl) {
+        padding: 0 10rem;
+    }
+
+    @include breakpoint(l) {
+        padding: 0 5rem;
+    }
+
+    @include breakpoint(m) {
+        flex-direction: column-reverse;
+
+        .checkout-form {
+            width: 100%;
+        }
+
+        .checkout-order {
+            width: 100%;
+            margin: 5rem 0 5rem 0;
         }
     }
 }
